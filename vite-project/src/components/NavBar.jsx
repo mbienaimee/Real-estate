@@ -7,7 +7,7 @@ function NavBar() {
       <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-20;lg:px-32 bg-transparent">
         <img src={assets.logo} alt="" />
         <ul className="hidden md:flex gap-7 text-white ">
-          <a href="http://" className="cursor-pointer hover:text-gray-400">
+          <a href="#Header" className="cursor-pointer hover:text-gray-400">
             Home
           </a>
           <a href="http://" className="cursor-pointer hover:text-gray-400">
