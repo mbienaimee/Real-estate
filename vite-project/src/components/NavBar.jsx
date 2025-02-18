@@ -1,8 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { assets } from "../assets/assets";
 
 function NavBar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  // Avoiding scroll
+
+  useEffect(() => {
+    if (showMobileMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showMobileMenu]);
+
   return (
     <div className="absolute top-0 left-0 w-full z-10">
       <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-20;lg:px-32 bg-transparent">
@@ -46,16 +59,32 @@ function NavBar() {
               alt=""
             />
           </div>
-          <a href="" className="px-4 py-2 rounded-full inline-block">
+          <a
+            onClick={() => setShowMobileMenu(false)}
+            href=""
+            className="px-4 py-2 rounded-full inline-block"
+          >
             Home
           </a>
-          <a href="" className="px-4 py-2 rounded-full inline-block">
+          <a
+            onClick={() => setShowMobileMenu(false)}
+            href=""
+            className="px-4 py-2 rounded-full inline-block"
+          >
             About
           </a>
-          <a href="" className="px-4 py-2 rounded-full inline-block">
+          <a
+            onClick={() => setShowMobileMenu(false)}
+            href=""
+            className="px-4 py-2 rounded-full inline-block"
+          >
             Projects
           </a>
-          <a href="" className="px-4 py-2 rounded-full inline-block">
+          <a
+            onClick={() => setShowMobileMenu(false)}
+            href=""
+            className="px-4 py-2 rounded-full inline-block"
+          >
             Testimonials
           </a>
         </ul>
